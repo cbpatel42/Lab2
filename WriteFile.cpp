@@ -1,7 +1,7 @@
 #include "WriteFile.h"
 #include <sstream>
 
-WriteFile* createWriteFile(const char* file_name)
+/*WriteFile* createWriteFile(const char* file_name)
 {
    WriteFile* wf = new WriteFile;
    wf->output_file.open(file_name);
@@ -30,4 +30,31 @@ void writeLine(WriteFile* wf, String* line)
    {
       wf->output_file << line->getText() << endl;
    }
+}*/
+
+
+WriteFile::WriteFile(const char* file_name)
+{
+   output_file.open(file_name);
+   closed = false;
+}
+WriteFile::~WriteFile()
+{
+	close();
+	//closed = true;
+}
+void WriteFile::writeLine(String* line)
+{
+	if(!closed && line->length() > 0)
+	{
+		output_file << line->getText() << endl;
+	}
+}
+void WriteFile::close()
+{
+	if(!closed)
+	{
+		output_file.close();
+		closed = true;
+	}
 }

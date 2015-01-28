@@ -10,7 +10,7 @@
 #include <iostream>
 int main()
 {
-	
+	/*
    ReadFile rf ("cds.txt");
    WriteFile wf ("out.txt");
 
@@ -25,7 +25,23 @@ int main()
    rf.close();
    wf.close();
    //delete rf;
-   //delete wf;
+   //delete wf;*/
+   
+   ReadFile* rf = new ReadFile("cds.txt");
+   WriteFile* wf = new WriteFile("out.txt");
+
+   
+   while(!rf->eof())
+   {
+      String* line = rf->readLine();
+      wf->writeLine(line);
+      delete line;
+   }
+
+   rf->close();
+   wf->close();
+   delete rf;
+   delete wf;
 
    return 0;
 }

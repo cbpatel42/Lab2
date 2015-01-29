@@ -5,10 +5,11 @@
 
 #include <fstream>
 using namespace std;
-
+// This is a comment:)
+//Comment mewrgetool
 //!Class to read data from a file
 /*!
- *The class accepts a character pointer called file_name that is opened with ifstream. 
+ *The class accepts a character pointer called file_name that is opened with ifstream.
  *Reads one line at a time.
  *Includes functions that return the two boolean private members
  *_eof is updated with each read line
@@ -20,7 +21,7 @@ class ReadFile
 	ifstream input_file;
 	bool _eof;
 	bool closed;
-	
+
 	public:
 	//! Constructor that accepts a const character array and opens that file. No provisions are made for files that cannot be opened
 	ReadFile(const char* file_name);

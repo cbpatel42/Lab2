@@ -6,19 +6,14 @@
 #include <fstream>
 using namespace std;
 
-/*struct ReadFile
-{
-   ifstream input_file;
-   bool _eof;
-   bool closed;
-};
-
-ReadFile* createReadFile(const char* file_name);
-void destroyReadFile(ReadFile* rf);
-String* readLine(ReadFile* rf);
-bool eof(ReadFile* rf);
-void close(ReadFile* rf);*/
-
+//!Class to read data from a file
+/*!
+ *The class accepts a character pointer called file_name that is opened with ifstream. 
+ *Reads one line at a time.
+ *Includes functions that return the two boolean private members
+ *_eof is updated with each read line
+ *Destructor closes file and sets closed bool to true.
+*/
 class ReadFile
 {
 	private:
@@ -27,10 +22,15 @@ class ReadFile
 	bool closed;
 	
 	public:
+	//! Constructor that accepts a const character array and opens that file. No provisions are made for files that cannot be opened
 	ReadFile(const char* file_name);
+	//! Destructor that closes the file stream.
     ~ReadFile();
+	//!Checks to see if we have reached the end of line or the file is closed. If so, returns NULL. Otherwise, the _eof is updated with the opposite of the return value from getline and a pointer to a String object is created with the text read.
     String* readLine();
+	//!Returns the value of the _eof member
     bool eof();
+	//!If the file has not yet been closed, use the ifstream close member function and set closed to true.
     void close();
 };
 

@@ -10,6 +10,7 @@ using namespace std;
 //Comment mewrgetool
 =======
 //This is a test comment ...
+//Why won't mergetool work :(
 >>>>>>> 8a52aad94942c6a18c2d28d10590a46b89cf831d
 //!Class to read data from a file
 /*!

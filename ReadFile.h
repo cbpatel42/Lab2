@@ -5,7 +5,7 @@
 
 #include <fstream>
 using namespace std;
-
+//This is a test comment ...
 //!Class to read data from a file
 /*!
  *The class accepts a character pointer called file_name that is opened with ifstream. 

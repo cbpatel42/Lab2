@@ -5,8 +5,12 @@
 
 #include <fstream>
 using namespace std;
+<<<<<<< HEAD
 // This is a comment:)
 //Comment mewrgetool
+=======
+//This is a test comment ...
+>>>>>>> 8a52aad94942c6a18c2d28d10590a46b89cf831d
 //!Class to read data from a file
 /*!
  *The class accepts a character pointer called file_name that is opened with ifstream.
